@@ -1,9 +1,7 @@
 on:
   push:
-    tags:
-      - '*'
-  release:
-    types: [created]
+    branches:
+      - master
 name: Build release
 jobs:
   build-distro-packages:

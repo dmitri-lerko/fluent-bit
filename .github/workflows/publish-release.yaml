@@ -273,15 +273,3 @@ jobs:
           mv packages/**/*.${{ env.format }} .
         env:
           format: ${{ matrix.format }}
-
-      - name: Copy distro package to webserver
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.FLUENTBITIO_HOST }}
-          username: ${{ secrets.FLUENTBITIO_USERNAME }}
-          key: ${{ secrets.FLUENTBITIO_SSHKEY }}
-          source: ${{ env.source_files }}
-          target: apt/${{ env.target }}
-        env:
-          source_files: "./*.${{ matrix.format }}"
-          target: ${{ matrix.target }}

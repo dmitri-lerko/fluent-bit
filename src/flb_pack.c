@@ -20,6 +20,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 #include <fluent-bit/flb_info.h>
 #include <fluent-bit/flb_mem.h>
@@ -67,6 +68,7 @@ int flb_json_tokenise(const char *js, size_t len,
     }
 
     if (ret == JSMN_ERROR_INVAL) {
+        printf("%s\n", js);
         return FLB_ERR_JSON_INVAL;
     }
 
