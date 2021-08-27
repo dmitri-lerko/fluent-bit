@@ -10,10 +10,7 @@ jobs:
       max-parallel: 48
       fail-fast: true
       matrix:
-        distro: [ amazonlinux/2, amazonlinux/2.arm64v8, centos/7, centos/7.arm64v8, debian/jessie,
-                  debian/jessie.arm64v8, debian/stretch, debian/stretch.arm64v8, debian/buster,
-                  debian/buster.arm64v8, ubuntu/16.04, ubuntu/18.04, ubuntu/20.04, ubuntu/18.04.arm64v8,
-                  ubuntu/20.04.arm64v8, raspbian/jessie, raspbian/stretch, raspbian/buster ]
+        distro: [ ubuntu/20.04 ]
 
     runs-on: [ ubuntu-latest ] #self-hosted, Linux, X64, packet-builder]
     steps:
@@ -73,8 +70,8 @@ jobs:
       max-parallel: 48
       fail-fast: true
       matrix:
-        arch: [ amd64, arm64v8, arm32v7 ]
-        suffix: [ x86_64, arm64v8, arm32v7, x86_64-debug ]
+        arch: [ amd64 ]
+        suffix: [ x86_64 ]
         os: [ linux ]
         exclude:
           - {arch: amd64, suffix: arm64v8}
